@@ -1,17 +1,29 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>短信/说英语</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-item><ion-label id="nettype" #nettype></ion-label></ion-item>
+  <ion-card>
+    <button end ion-button inline small color="primary" (click)="speak(words)" >开始说话</button>
+    <ion-item>
+      <ion-label stacked>输入要说的话</ion-label>
+      <ion-input type="text" #words></ion-input>
+    </ion-item>
+
+  </ion-card>
+
+  <ion-card>
+    <button ion-button  inline small color="primary" (click)="sendmsg(phonenum,message)" >发送信息</button>
+    <ion-item>
+      <ion-label stacked>号码：</ion-label>
+      <ion-input type="text" #phonenum></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>信息：</ion-label>
+      <ion-input type="text" #message></ion-input>
+    </ion-item>
+  </ion-card>
 </ion-content>
